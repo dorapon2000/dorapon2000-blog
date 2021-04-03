@@ -1,0 +1,32 @@
+.img-container {
+  width: 700px;
+  height: 100px;
+  margin: 100px auto 0;
+  border: 1px solid #000000;
+  font-size: 0;
+}
+
+.animation-move {
+  width: 200px;
+  height: 100px;
+  animation: move 3s linear infinite;
+}
+
+.animation-walk {
+  background: url(img/walk.png) no-repeat;
+  width: 100px;
+  height: 100px;
+  animation: walk 0.3s steps(2) infinite;
+}
+
+@keyframes move {
+  to {
+    transform: translateX(600px);
+  }
+}
+
+@keyframes walk {
+  to {
+    background-position: -200px 0;
+  }
+}
