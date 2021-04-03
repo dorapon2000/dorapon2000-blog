@@ -7,8 +7,6 @@
 }
 
 .animation-move {
-  width: 200px;
-  height: 100px;
   animation: move 3s linear infinite;
 }
 
