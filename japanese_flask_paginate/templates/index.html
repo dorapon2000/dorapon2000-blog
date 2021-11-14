@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>Flask Pagenateの日本語化テスト</title>
+</head>
+<body>
+  <div class="m-5">
+    {{ pagination.info }}
+    <table class="table">
+      {% for user in users %}
+        <tr>
+          <td>{{ user }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    {{ pagination.links }}
+  </div>
+</body>
+</html>
