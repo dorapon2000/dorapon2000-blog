@@ -12,10 +12,10 @@ def index():
     user_count = count_users()
 
     # displaying 1 - 5 users in total 103
-    # pagination = Pagination(page=page, per_page=limit, total=user_count, record_name='users', bs_version=4)
+    # pagination = Pagination(page=page, per_page=limit, total=user_count, record_name='users', css_framework='bootstrap5')
 
     # found 103 users, displaying 1 - 5
-    # pagination = Pagination(page=page, per_page=limit, search=True, total=user_count, found=user_count, record_name='users', bs_version=4)
+    # pagination = Pagination(page=page, per_page=limit, search=True, total=user_count, found=user_count, record_name='users', css_framework='bootstrap5')
 
     # 103 ユーザー中の 1 - 5 ユーザー
     pagination = Pagination(
@@ -24,7 +24,7 @@ def index():
         total=user_count,
         display_msg='<b>{total}</b> {record_name}中の <b>{start} - {end}</b> {record_name}',
         record_name='ユーザー',
-        bs_version=4,
+        css_framework='bootstrap5',
     )
 
     return render_template('index.html', users=users, pagination=pagination)
