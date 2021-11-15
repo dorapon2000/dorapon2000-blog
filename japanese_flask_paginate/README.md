@@ -1,6 +1,7 @@
 # 概要
 
 「Flask-Paginateでページネーション情報を日本語化する」のサンプルコードです。
+https://qiita.com/dorapon2000/items/2ee14849d45a89c61464
 
 # 確認してる環境
 
