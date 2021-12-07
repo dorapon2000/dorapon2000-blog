@@ -3,9 +3,9 @@ def introduction(name):
 
 
 def hello(place):
-    print(f'hello {place}')
+    print(f'Hello {place}!')
 
 
 if __name__ == '__main__':
     introduction('dorapon')
-    hello('world')
+    hello('World')
