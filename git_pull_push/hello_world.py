@@ -1,3 +1,7 @@
+def recommendation(name):
+    print(f'I recommend {name}!')
+
+
 def introduction(name):
     print(f'I am {name}')
 
@@ -8,4 +12,4 @@ def hello(place):
 
 if __name__ == '__main__':
     introduction('dorapon')
-    hello('World')
+    recommendation('using Python')
