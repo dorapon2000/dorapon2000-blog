@@ -1,11 +1,11 @@
+def fine():
+    print('I am fine.')
+
+
 def introduction(name):
-    print(f'I am {name}')
-
-
-def hello(place):
-    print(f'Hello {place}!')
+    print(f'I am {name}.')
 
 
 if __name__ == '__main__':
     introduction('dorapon')
-    hello('World')
+    fine()
