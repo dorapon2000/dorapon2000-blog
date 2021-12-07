@@ -1,3 +1,7 @@
+def recommendation(name):
+    print(f'I recommend {name}!')
+
+
 def fine():
     print('I am fine.')
 
@@ -9,3 +13,4 @@ def introduction(name):
 if __name__ == '__main__':
     introduction('dorapon')
     fine()
+    recommendation('using Python')
