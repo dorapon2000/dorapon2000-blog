@@ -25,10 +25,6 @@ class ChildB(Parent):
 
 
 def main():
-    child_a_1 = ChildA()
-    child_a_2 = ChildA()
-    child_a_3 = ChildA()
-
     print(Parent.subclasses_count)  # 2
 
 
