@@ -5,12 +5,33 @@ use utf8; # 埋め込みの文字列リテラルがutf8の内部文字列とし�
 use Encode qw/encode_utf8/; # 漢字を含む内部文字列を標準出力できるutf8バイナリに変換する用
 
 use DateTime;
+use DateTime::Format::Strptime;
 
 # 現在時刻/今日のDateTime
 my $dt_now = DateTime->now(time_zone => 'local');
 my $dt_today = DateTime->now(time_zone => 'local');
 
 # 文字列 → DateTime型
+my $strp_YmekMS = DateTime::Format::Strptime->new(
+    pattern   => '%Y/%m/%e %k:%M:%S',
+    locale    => 'ja',
+    time_zone => 'local',
+);
+my $dt_nopadding = $strp_YmekMS->parse_datetime('2022/2/10 1:00:00');
+
+my $strp_YmdHM = DateTime::Format::Strptime->new(
+    pattern   => '%Y-%m-%d %H:%M',
+    locale    => 'ja',
+    time_zone => 'local',
+);
+my $dt_padding = $strp_YmdHM->parse_datetime('2022-02-10 01:00');
+
+my $strp_iso = DateTime::Format::Strptime->new(
+    pattern   => '%Y-%m-%dT%H:%M:%S',
+    locale    => 'ja',
+    time_zone => 'local',
+);
+my $dt_iso = $strp_iso->parse_datetime('2022-02-10T01:00:00');
 
 # DateTime型 → 文字列
 say $dt_now->ymd('/'), ' ', $dt_now->hms; # 2022/02/21 00:58:23
