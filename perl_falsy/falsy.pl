@@ -12,7 +12,6 @@ my $str_val_map = {
 
 for my $v (@$vals) {
     for my $w (@$vals) {
-        next if $v eq $w;
         print "$v == $w: ";
 
         my $vv = $str_val_map->{$v};
@@ -24,7 +23,6 @@ for my $v (@$vals) {
 
 for my $v (@$vals) {
     for my $w (@$vals) {
-        next if $v eq $w;
         print "$v eq $w: ";
 
         my $vv = $str_val_map->{$v};

@@ -1,42 +1,56 @@
-Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 21.
+Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 20.
+Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 20.
+empty == empty: True
+Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 20.
 empty == num0: True
-Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 21.
+Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 20.
 empty == str0: True
-Use of uninitialized value $ww in numeric eq (==) at perl_falsy/falsy.pl line 21.
-Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 21.
+Use of uninitialized value $ww in numeric eq (==) at perl_falsy/falsy.pl line 20.
+Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 20.
 empty == undef: True
-Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 21.
+Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 20.
 num0 == empty: True
+num0 == num0: True
 num0 == str0: True
-Use of uninitialized value $ww in numeric eq (==) at perl_falsy/falsy.pl line 21.
+Use of uninitialized value $ww in numeric eq (==) at perl_falsy/falsy.pl line 20.
 num0 == undef: True
-Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 21.
+Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 20.
 str0 == empty: True
 str0 == num0: True
-Use of uninitialized value $ww in numeric eq (==) at perl_falsy/falsy.pl line 21.
+str0 == str0: True
+Use of uninitialized value $ww in numeric eq (==) at perl_falsy/falsy.pl line 20.
 str0 == undef: True
-Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 21.
-Use of uninitialized value $vv in numeric eq (==) at perl_falsy/falsy.pl line 21.
+Argument "" isn't numeric in numeric eq (==) at perl_falsy/falsy.pl line 20.
+Use of uninitialized value $vv in numeric eq (==) at perl_falsy/falsy.pl line 20.
 undef == empty: True
-Use of uninitialized value $vv in numeric eq (==) at perl_falsy/falsy.pl line 21.
+Use of uninitialized value $vv in numeric eq (==) at perl_falsy/falsy.pl line 20.
 undef == num0: True
-Use of uninitialized value $vv in numeric eq (==) at perl_falsy/falsy.pl line 21.
+Use of uninitialized value $vv in numeric eq (==) at perl_falsy/falsy.pl line 20.
 undef == str0: True
+Use of uninitialized value $ww in numeric eq (==) at perl_falsy/falsy.pl line 20.
+Use of uninitialized value $vv in numeric eq (==) at perl_falsy/falsy.pl line 20.
+undef == undef: True
+empty eq empty: True
 empty eq num0: False
 empty eq str0: False
-Use of uninitialized value $ww in string eq at perl_falsy/falsy.pl line 33.
+Use of uninitialized value $ww in string eq at perl_falsy/falsy.pl line 31.
 empty eq undef: True
 num0 eq empty: False
+num0 eq num0: True
 num0 eq str0: True
-Use of uninitialized value $ww in string eq at perl_falsy/falsy.pl line 33.
+Use of uninitialized value $ww in string eq at perl_falsy/falsy.pl line 31.
 num0 eq undef: False
 str0 eq empty: False
 str0 eq num0: True
-Use of uninitialized value $ww in string eq at perl_falsy/falsy.pl line 33.
+str0 eq str0: True
+Use of uninitialized value $ww in string eq at perl_falsy/falsy.pl line 31.
 str0 eq undef: False
-Use of uninitialized value $vv in string eq at perl_falsy/falsy.pl line 33.
+Use of uninitialized value $vv in string eq at perl_falsy/falsy.pl line 31.
 undef eq empty: True
-Use of uninitialized value $vv in string eq at perl_falsy/falsy.pl line 33.
+Use of uninitialized value $vv in string eq at perl_falsy/falsy.pl line 31.
 undef eq num0: False
-Use of uninitialized value $vv in string eq at perl_falsy/falsy.pl line 33.
+Use of uninitialized value $vv in string eq at perl_falsy/falsy.pl line 31.
 undef eq str0: False
+Use of uninitialized value $vv in string eq at perl_falsy/falsy.pl line 31.
+Use of uninitialized value $ww in string eq at perl_falsy/falsy.pl line 31.
+undef eq undef: True
