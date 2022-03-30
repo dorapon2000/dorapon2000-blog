@@ -8,6 +8,7 @@ say(defined ""    ? 1 : 0); # -> 1
 say(defined "0"   ? 1 : 0); # -> 1
 say(defined 0     ? 1 : 0); # -> 1
 
+# my @l = ();
 my @l = undef;
 $l[0] = "Hello";
 say $l[0]; # -> Hello
