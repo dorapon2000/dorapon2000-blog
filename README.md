@@ -8,5 +8,5 @@ https://dorapon2000.hatenablog.com/
 
 ```
 carton install
-npm install
+yarn install
 ```
