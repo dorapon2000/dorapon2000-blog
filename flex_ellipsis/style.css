@@ -8,6 +8,7 @@
   border: 1px solid #ddd;
   border-radius: 6px;
 }
+
 .element .left-container {
   display: flex;
   flex: 1;
@@ -15,19 +16,20 @@
   align-items: center;
   min-width: 0;
 }
+
 .element .left-container .icon {
   width: 32px;
   height: 32px;
   background-color: #d0e0ff;
 }
+
 .element .left-container .title {
   flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 16px;
-  font-weight: bold;
   white-space: nowrap;
 }
+
 .element .right-container {
   display: flex;
   gap: 8px;
