@@ -1,5 +1,16 @@
 {
-    "code-runner.executorMap": {
-        "perl": "carton exec -- perl $(wslpath $fullFileName)"
+  "code-runner.executorMap": {
+    "perl": "carton exec -- perl $(wslpath $fullFileName)"
+  },
+
+  "scss.validate": false,
+  "[scss][css]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "always"
     },
+  },
+  "stylelint.validate" : ["css", "scss"],
+  "stylelint.configFile": "./.stylelintrc.json",
+  "stylelint.configBasedir": "."
 }

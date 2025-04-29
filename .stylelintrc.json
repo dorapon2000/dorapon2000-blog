@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order"
+  ],
+  "files":[
+    "double_flex/**/*.scss"
+  ],
+  "ignoreFiles": [
+    "**/node_modules/**"
+  ]
+}

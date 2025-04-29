@@ -2,6 +2,7 @@
   "name": "dorapon2000-blog",
   "description": "記事用のソースコード置き場",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "js:lint": "eslint --cache **/*.js && prettier --check **/*.js",
     "js:fix": "eslint --cache --fix **/*.js && prettier --write **/*.js"
@@ -9,7 +10,10 @@
   "devDependencies": {
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.4.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "stylelint": "^16.19.1",
+    "stylelint-config-recess-order": "^6.0.0",
+    "stylelint-config-standard-scss": "^14.0.0"
   },
   "dependencies": {
     "date-fns": "^2.28.0"
