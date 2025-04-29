@@ -1,0 +1,12 @@
+{
+  "name": "double_flex",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "sass --no-source-map style.scss style.css",
+    "watch": "sass --watch style.scss:style.css"
+  },
+  "dependencies": {
+    "sass": "^1.87.0"
+  }
+}
