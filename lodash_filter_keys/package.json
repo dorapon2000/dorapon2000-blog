@@ -1,0 +1,12 @@
+{
+  "name": "lodash_filter_keys",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node compare.js"
+  },
+  "dependencies": {
+    "lodash": "4.18.1"
+  }
+}
