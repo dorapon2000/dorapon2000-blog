@@ -1,16 +1,16 @@
 <!doctype html>
 <meta charset="utf-8">
 <title>test</title>
-<script src="https://a.test/report.js"></script>
+<script src="/report.js"></script>
 
-<img id="img-a-http"     src="http://a.test/img.svg">
-<img id="img-b-http"     src="http://b.test/img.svg">
-<img id="img-evil-https" src="https://evil.test/img.svg">
-<img id="img-old-http"   src="http://old.test/img.svg">
+<img id="img-a-http"     src="http://a.example.com/img.svg">
+<img id="img-b-http"     src="http://b.example.net/img.svg">
+<img id="img-evil-https" src="https://evil.example.org/img.svg">
+<img id="img-old-http"   src="http://old.example.net/img.svg">
 <img id="img-data"       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'/%3E">
 
-<script id="script-a-http"     src="http://a.test/app.js"></script>
-<script id="script-b-http"     src="http://b.test/app.js"></script>
-<script id="script-evil-https" src="https://evil.test/app.js"></script>
-<script id="script-old-http"   src="http://old.test/app.js"></script>
+<script id="script-a-http"     src="http://a.example.com/app.js"></script>
+<script id="script-b-http"     src="http://b.example.net/app.js"></script>
+<script id="script-evil-https" src="https://evil.example.org/app.js"></script>
+<script id="script-old-http"   src="http://old.example.net/app.js"></script>
 <script id="script-inline">R['script-inline'] = '実行（インライン）';</script>

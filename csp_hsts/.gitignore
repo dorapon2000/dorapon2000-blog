@@ -2,3 +2,5 @@ certs/server.*
 certs/spki.txt
 logs/
 profiles/
+block/*
+!block/.gitkeep
