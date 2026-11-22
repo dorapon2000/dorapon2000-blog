@@ -1,0 +1,4 @@
+certs/server.*
+certs/spki.txt
+logs/
+profiles/
