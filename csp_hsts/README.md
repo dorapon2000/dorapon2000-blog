@@ -2,7 +2,7 @@
 
 「default-src https: と upgrade-insecure-requests; と Strict-Transport-Security の違い」の検証コードです。
 
-- 80 番ポートの nginx は、HTTP の通信を書き換える攻撃者の役です。どのホストのどのパスにも「改ざんされた」中身を返します。
+- 80 番ポートの nginx は、HTTP の通信を書き換える攻撃者の役です。どのホストのどのパスにも、攻撃者のページを返します。
 - 443 番ポートの nginx は、本物のサイトの役です。パスごとに付けるヘッダーを変えています。
 - ホストは、例示用に予約されたドメインを使います。
 
@@ -10,7 +10,6 @@
 | --- | --- |
 | `a.example.com` | 自分のサイト |
 | `b.example.net` | 他のサイト |
-| `evil.example.org` | 攻撃者が用意した HTTPS のサーバー |
 | `old.example.net` | HTTPS で配信していないサイト |
 
 | パス | ヘッダー |
@@ -23,11 +22,11 @@
 
 # Requirements
 
-- macOS と Google Chrome（`run.sh` は macOS の Chrome のパスを使う）
+- macOS と Google Chrome
 - Docker と Docker Compose
 - openssl
 
-macOS 15.8.1、Google Chrome 158.0.8127.36、Docker 29.9.3、LibreSSL 3.3.6 で確かめました。nginx は `compose.yaml` で 1.30.7 に固定しています。
+macOS 15.8.1、Google Chrome 158.0.8127.36、Docker 29.9.3、LibreSSL 3.3.6 で確かめました。`run.sh` は macOS の Chrome のパス（`/Applications/Google Chrome.app`）を使います。
 
 80 番と 443 番のポートを使うので、ほかに使っているものがあれば止めてください。
 
@@ -49,9 +48,12 @@ docker compose up -d
 
 Chrome をヘッドレスで開き、ページの結果と nginx に届いたリクエストを表示します。
 
-- 同じプロファイル名で続けて実行すると、HSTS の記録が引き継がれます。HSTS と無関係な検証では、毎回新しいプロファイル名を使ってください。Chrome は、警告を無視して http で開いたホストを覚えるからです。
+- Chrome の状態は、プロファイル名ごとに `profiles/` に残ります。
+    - HSTS の検証は、同じプロファイル名で続けて実行します。
+    - それ以外は、毎回新しいプロファイル名を使ってください。Chrome は、警告を無視して http で開いたホストを覚えます。
+    - 記事のコマンドをもう一度通すときは、先に `rm -rf profiles` で消してください。
 - `NETLOG=1` を付けると、Chrome のネットワークのログを `logs/netlog.json` に書き出します。
-- `HEADFUL=1` を付けると、画面のある Chrome で開きます。警告の画面を見るときに使います。ウィンドウを閉じると終わります。
+- `HEADFUL=1` を付けると、画面のある Chrome で開きます。⌘Q で Chrome を終了すると終わります。
 
 攻撃者が HTTPS を妨害する場面は、`block/<ホスト名>` というファイルで作ります。ファイルがあるあいだ、443 番ポートの nginx はそのホストへの接続を切ります。
 

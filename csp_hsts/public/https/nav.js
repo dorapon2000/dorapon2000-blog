@@ -1,4 +1,3 @@
-// nav.js: ?to= の URL へのリンクを作ってクリックする
 const a = document.createElement('a');
 a.href = new URLSearchParams(location.search).get('to');
 a.textContent = a.href;

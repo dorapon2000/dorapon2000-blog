@@ -1,5 +1,4 @@
 #!/bin/sh
-# a.example.com / b.example.net / evil.example.org の自己署名証明書を作り、Chrome に渡す SPKI のハッシュを表示する
 set -eu
 cd "$(dirname "$0")"
 mkdir -p certs && cd certs
@@ -10,9 +9,8 @@ openssl req -x509 -newkey rsa:2048 -nodes -days 30 \
 distinguished_name = dn
 [dn]
 [san]
-subjectAltName = DNS:a.example.com,DNS:b.example.net,DNS:evil.example.org
+subjectAltName = DNS:a.example.com,DNS:b.example.net
 CONF
 openssl x509 -in server.crt -pubkey -noout \
   | openssl pkey -pubin -outform der \
   | openssl dgst -sha256 -binary | base64 > spki.txt
-cat spki.txt

@@ -1,9 +1,5 @@
 #!/bin/sh
-# 使い方: ./run.sh <プロファイル名> <URL>
-# Chrome をヘッドレスで開き、最後の DOM の結果と、nginx に届いたリクエストを表示する。
-# 同じプロファイル名で続けて実行すると、HSTS の記録が引き継がれる。
-# NETLOG=1 を付けると、Chrome のネットワークのログを logs/netlog.json に書き出す。
-# HEADFUL=1 を付けると、画面のある Chrome で開く。ウィンドウを閉じると終わる。
+# 使い方は README の Usage を参照
 set -eu
 cd "$(dirname "$0")"
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -28,5 +24,4 @@ else
   sed -n 's/.*Page load failed: \(.*\)/ページを開けなかった: \1/p' logs/chrome.log
 fi
 echo '--- nginx に届いたリクエスト ---'
-sleep 1
 cat logs/test.log

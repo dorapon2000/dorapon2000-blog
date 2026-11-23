@@ -1,5 +1,4 @@
-certs/server.*
-certs/spki.txt
+certs/
 logs/
 profiles/
 block/*
