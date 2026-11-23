@@ -9,7 +9,7 @@
 | ホスト | 役 |
 | --- | --- |
 | `a.example.com` | 自分のサイト |
-| `b.example.net` | 他のサイト |
+| `b.example.net` | 他人のサイト |
 | `old.example.net` | HTTPS で配信していないサイト |
 
 | パス | ヘッダー |
