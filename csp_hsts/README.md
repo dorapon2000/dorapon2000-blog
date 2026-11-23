@@ -10,7 +10,7 @@
 | --- | --- |
 | `a.example.com` | 自分のサイト |
 | `b.example.net` | 他人のサイト |
-| `old.example.net` | HTTPS で配信していないサイト |
+| `old.example.net` | HTTPS で配信していない、他人のサイト |
 
 | パス | ヘッダー |
 | --- | --- |

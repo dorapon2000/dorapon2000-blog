@@ -9,7 +9,7 @@ PROFILE=$1
 URL=$2
 set -- \
   --user-data-dir="profiles/$PROFILE" \
-  --host-resolver-rules="MAP *.example.com 127.0.0.1,MAP *.example.net 127.0.0.1,MAP *.example.org 127.0.0.1" \
+  --host-resolver-rules="MAP *.example.com 127.0.0.1,MAP *.example.net 127.0.0.1" \
   --ignore-certificate-errors-spki-list="$(cat certs/spki.txt)" \
   --no-first-run --no-default-browser-check \
   --use-mock-keychain --password-store=basic \
