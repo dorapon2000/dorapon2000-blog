@@ -5,23 +5,23 @@ cd "$(dirname "$0")"
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 mkdir -p profiles logs
 : > logs/test.log
-PROFILE=$1
-URL=$2
-set -- \
-  --user-data-dir="profiles/$PROFILE" \
+"$CHROME" \
+  --user-data-dir="profiles/$1" \
   --host-resolver-rules="MAP *.example.com 127.0.0.1,MAP *.example.net 127.0.0.1" \
   --ignore-certificate-errors-spki-list="$(cat certs/spki.txt)" \
   --no-first-run --no-default-browser-check \
   --use-mock-keychain --password-store=basic \
   --disable-background-networking --disable-component-update \
-  ${NETLOG:+--log-net-log=logs/netlog.json}
-if [ -n "${HEADFUL:-}" ]; then
-  "$CHROME" "$@" "$URL" 2>/dev/null
+  "$2" 2>/dev/null &
+CHROME_PID=$!
+if [ -n "${WAIT:-}" ]; then
+  wait "$CHROME_PID"
 else
-  "$CHROME" --headless --virtual-time-budget=5000 --dump-dom "$@" "$URL" 2>logs/chrome.log \
-    | sed -n -e 's/.*<p id="landing">\(.*\)<\/p>.*/\1/p' -e '/<pre id="result">/,/<\/pre>/p' \
-    | sed -e 's/<[^>]*>//g'
-  sed -n 's/.*Page load failed: \(.*\)/ページを開けなかった: \1/p' logs/chrome.log
+  sleep 5
+  kill -INT "$CHROME_PID"
+  wait "$CHROME_PID" || true
 fi
+echo '--- ページの結果 ---'
+sed -n 's|^https://[^/]*/report?\(.*\) 204$|\1|p' logs/test.log | tr '&' '\n' | sed 's/%3A/:/g; s/%2F/\//g; s/=/: /'
 echo '--- nginx に届いたリクエスト ---'
-cat logs/test.log
+grep -v '/report?' logs/test.log || true

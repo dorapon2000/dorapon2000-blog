@@ -1,1 +1,1 @@
-R[document.currentScript.id] = '実行（https）';
+R[document.currentScript.id] = 'executed-https';
