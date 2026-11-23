@@ -1,5 +1,6 @@
+const params = new URLSearchParams(location.search);
 const a = document.createElement('a');
-a.href = new URLSearchParams(location.search).get('to');
+a.href = params.get('to');
 a.textContent = a.href;
 document.body.append(a);
-a.click();
+setTimeout(() => a.click(), Number(params.get('wait') ?? 0) * 1000);
